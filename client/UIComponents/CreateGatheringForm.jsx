@@ -125,7 +125,7 @@ class CreateGatheringForm extends React.Component {
             label="Start time"
           >
             {getFieldDecorator('timePickerStart', configTimeStart)(
-              <TimePicker format='HH:mm' />
+              <TimePicker minuteStep={15} format='HH:mm' />
             )}
           </FormItem>
 

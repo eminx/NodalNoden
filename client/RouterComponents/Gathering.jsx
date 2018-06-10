@@ -174,7 +174,7 @@ class Gathering extends React.Component {
     		<Row gutter={24}>
           <Col sm={24} md={16}>
             {
-              !isLoading && gatheringData
+              !isLoading && gatheringData 
                 ? <CardArticle 
                     item={gatheringData}
                     isLoading={isLoading}
@@ -191,7 +191,7 @@ class Gathering extends React.Component {
     			<Col sm={24} md={8}>
             <div style={{display: 'flex', justifyContent: 'center', marginTop: 10}}>
               {
-                isMyEventWTF 
+                isMyEventWTF && gatheringData && gatheringData.attendees
                   ?
                     gatheringData.attendees.length > 0 
                       ?

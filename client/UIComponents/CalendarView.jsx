@@ -1,7 +1,8 @@
 import React from 'react';
 import BigCalendar from 'react-big-calendar';
-import events from './events';
 import moment from 'moment';
+
+import { removeSpace } from '../functions';
 
 let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k])
 
@@ -12,6 +13,7 @@ let CalendarView = props => {
   return (
     <div>
       <BigCalendar
+        eventPropGetter={event => ({className: 'category-' + removeSpace(event.room)})}
         onSelectEvent={props.onSelect}
         events={gatherings}
         defaultView="month"
